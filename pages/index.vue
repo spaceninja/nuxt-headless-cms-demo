@@ -9,9 +9,11 @@
         My beautiful Nuxt.js project
       </h2>
       <div class="links">
-        <a v-for="(post, index) in allPosts" :key="index" class="button--grey">
-          {{ post.title }}
-        </a>
+        <div v-for="(post, index) in allPosts" :key="index">
+          <nuxt-link :to="`/blog/${post.slug}`" class="button--grey">
+            {{ post.title }}
+          </nuxt-link>
+        </div>
       </div>
     </div>
   </section>
